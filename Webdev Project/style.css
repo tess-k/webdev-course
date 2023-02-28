@@ -1,0 +1,143 @@
+* {
+    padding: 0px;
+    box-sizing: border-box;
+    margin: auto;
+}
+
+/* screen over 800px */
+
+@media only screen and (min-width: 800px) {
+    #main-img {
+        clear: both;
+        background: url(canoe.jpg) center center;
+        display: inline;
+        width: 1200px;
+        height: 450px;
+        margin: auto;
+        padding: auto;
+    }
+      
+    .main {
+        width: 100%;
+        margin-top: 50px;
+        display: flex;
+        position: relative top center;
+    }
+
+    .main-text {
+        position: absolute;
+        top: 25%;
+        left: 28%;
+        font-size: 80px;
+        color: white;
+      }
+
+    span {
+        margin: auto;
+        width: relative;
+        max-width: 1200px;
+        display: block;
+        padding: 10px;   
+    }
+
+}
+
+
+/* below 800px, mobile screen */
+
+@media only screen and (max-width: 800px) {
+    p {
+        font-size: 12px;
+    }
+
+    #main {
+        width: 100%;
+        margin-top: 50px;
+        display: flex;
+    }
+
+    #main-img {
+        clear: both;
+        background: url(canoe.jpg) center center;
+        width: 100%;
+        height: auto;
+    }
+
+    .main-text {
+        position: absolute;
+        top: 25%;
+        left: 20%;
+        font-size: 30px;
+        color: white;
+      }
+
+
+    span {
+        margin: auto;
+        width: relative;
+        display: block;
+        padding: 10px;   
+    }
+
+ 
+}
+
+/* common CSS, regardless of screen size */
+
+.navbar {
+    height: 60px;
+    width: 100%;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    float: left;
+    background-color: midnightblue;
+    padding: 5px;
+    box-shadow: 0px 5px 6px 3px #4e4e4e;
+    color: white;
+}
+
+.navbar h3 {
+    padding-top: 12px;
+}
+
+.logo {
+    float: left;
+    margin-right: 20px;
+}   
+
+.menu-button {
+    position: absolute;
+    float: right;
+    top: 5px;
+    right: 10px;
+    height: 50px;
+    width: 50px;
+}
+
+.menu {
+    position: fixed;
+    top: 60px;
+    right: 5px;
+    list-style: none;
+    text-decoration: none;
+    list-style-type: none;
+    line-height: 30px;
+    padding: 10px;
+    font-size: 20px;
+    background-color: midnightblue;
+    color: white;
+    padding: 20px;
+}
+
+#hidden {
+    display: none;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    
+}
+
+
