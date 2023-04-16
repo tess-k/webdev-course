@@ -127,6 +127,7 @@
     background-color: midnightblue;
     color: white;
     padding: 20px;
+    box-shadow: 0px 5px 6px 3px #4e4e4e;
 }
 
 .hidden {
@@ -141,3 +142,7 @@
 }
 
 
+h2 {
+    text-align: center;
+    margin-bottom: 100px;
+}
