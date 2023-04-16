@@ -60,11 +60,12 @@
   <form method="post" action="problem.php">
 
     <label for="title">Title</label>
-    <input type="text" id="title" name="title">
+    <select id="title" name="title">
       <option value="Mr">Mr</option>
       <option value="Miss">Miss</option>
       <option value="Mrs">Mrs</option>
-
+      </select>
+      
     <label for="fname">First Name</label>
     <input type="text" id="fname" name="firstname" placeholder="Your first name">
     
@@ -82,10 +83,14 @@
 
   </form>
   </div>   
+
+<p>
      
      <?php
     include "footer.php";
     ?>
+    
+</p>
     
     <span id="logout" position="top right"><a href="logout.php">Log out</a></span>
     
