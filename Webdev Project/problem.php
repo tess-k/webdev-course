@@ -46,7 +46,7 @@
         <p><a href="lost-password.php">Lost Password?</a></p>
         <p><a href="isnt-working.php">Computer Isn't Working</a></p>
     <?php
-    };
+    } ;
     ?> 
         
         
