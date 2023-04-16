@@ -61,7 +61,7 @@
     }
     
     
-    else($emailType = "newAccount") 
+    elseif ($emailType = "newAccount") 
     { ?>
         
     New account
