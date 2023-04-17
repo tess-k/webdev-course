@@ -54,7 +54,7 @@
 
  
     <input type="radio" id="lostPassword" value="emailType">
-    <label for="lostPassword">I Lost My Password</label>
+    <label for="emailType">I Lost My Password</label>
 
     <input type="submit" value="Submit">
 
