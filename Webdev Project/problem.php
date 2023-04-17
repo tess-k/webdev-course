@@ -20,28 +20,51 @@
 
 
 <body>
-    
-        
+
+<!--Navigation bar-->
+
+    <nav class="navbar">
+        <div class="header-logo">
+            <img src="imgs/paddle-white.png" class="logo" width="50px" height="50px" alt="Halifax Canoe and Kayak Logo">
+            <h3>Halifax Canoe & Kayak</h3>
+        </div>
+
+
+        <div>
+            <img src="imgs/hamburger.png" class="menu-button" id="menubtn">
+        </div>
+
+
+        <div class="menu hidden" id="dropmenu">
+            
+              <p><a href="index.php">Home</a>
+              <p><a href="booking.html">Book an Adventure</a></p>
+              <p><a href="admin.php">Admin Login</a></p>
+            
+        </div> 
+
+
+    </nav>  
     
     <?php
     
-    $role = 'role';
+$role = $_POST["role"];
             
-    if($role = "CEO")
+    if($role == "CEO")
     { ?>
         <p><a href="isnt-working.php">Computer Isn't Working</a></p>
         <p><a href="need-help.php">I Need Help</a></p>
    <?php
     }
     
-    elseif ($role = "Admin")
+    elseif ($role == "Admin")
     { ?>
     <p><a href="new-account.php"/>Create A New Account</a></p>
     <p><a href="isnt-working.php">Computer Isn't Working</a></p>
     <?php
     }
     
-    elseif ($role = "Manager") 
+    elseif ($role == "Manager") 
     { ?>
         <p><a href="lost-password.php">Lost Password?</a></p>
         <p><a href="isnt-working.php">Computer Isn't Working</a></p>
