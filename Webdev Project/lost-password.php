@@ -53,7 +53,7 @@
   <form method="post" action="send-email.php">
 
  
-    <input type="radio" id="lostPassword" value="emailType">
+    <input type="radio" id="lostPassword" value="lostPassword">
     <label for="emailType">I Lost My Password</label>
 
     <input type="submit" value="Submit">
