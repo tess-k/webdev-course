@@ -1,6 +1,8 @@
-   
 <?php
-    require "header.php";
+    if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
 ?>
 
 <!DOCTYPE html>
@@ -50,9 +52,9 @@
 
 <?php
     
-    $emailType = 'emailType';
+$emailType = $_POST["emailType"];
             
-    if($emailType = "lostPassword")
+    if($emailType == "lostPassword")
     { ?>
 
     Lost password
@@ -61,7 +63,7 @@
     }
     
     
-    elseif ($emailType = "newAccount") 
+    elseif ($emailType == "newAccount") 
     { ?>
         
     New account
