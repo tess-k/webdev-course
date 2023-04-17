@@ -92,7 +92,6 @@
     
 </p>
     
-    <span id="logout" position="top right"><a href="logout.php">Log out</a></span>
     
     
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
