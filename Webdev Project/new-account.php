@@ -46,7 +46,6 @@
     </nav>
 
 <?php 
-    $emailType = ($_POST["newAccount"]);
 
 { ?>
  <div class="container">
@@ -54,7 +53,7 @@
 
  
     <input type="radio" id="newAccount" value="emailType">
-    <label for="newAccount">I Need A New Account</label>
+    <label for="emailType">I Need A New Account</label>
 
     <input type="submit" value="Submit">
 
