@@ -2,10 +2,9 @@
     require "header.php";
 ?>
 
-
 <!DOCTYPE html>
+<html lang="en">
 
-<html>
 <head>
 
     <!--All the normal setup for a site-->
@@ -13,11 +12,11 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Halifax Canoe and Kayak</title>
-    
+    <title>Halifax Canoe and Kayak | Home</title>
+
 </head>
 
-
+<!--Into the main body of the text etc.-->
 
 <body>
 
@@ -45,47 +44,53 @@
         </div> 
 
 
-    </nav>  
+    </nav>
     
-    <?php
+    
+<body>
+    
+ <?php
+$servername = "localhost";
+$username = "id20614282_localhost";
+$password = "#Password1";
+$database = "id20614282_webdevdb";
 
-   
-            
-    if($role == "CEO")
-    { ?>
-        <p><a href="isnt-working.php">Computer Isn't Working</a></p>
-        <p><a href="need-help.php">I Need Help</a></p>
-        <p><a href="admin-add.php">Add A New Trip</a></p>
-   <?php
-    }
-    
-    elseif ($role == "Admin")
-    { ?>
-    <p><a href="new-account.php"/>Create A New Account</a></p>
-    <p><a href="isnt-working.php">Computer Isn't Working</a></p>
-    <p><a href="admin-add.php">Add A New Trip</a></p>
-    <?php
-    }
-    
-    elseif ($role == "Manager") 
-    { ?>
-        <p><a href="lost-password.php">Lost Password?</a></p>
-        <p><a href="isnt-working.php">Computer Isn't Working</a></p>
-    <?php
-    } ;
-    ?> 
-        
-        
-        
-            
-    <?php
+$conn = new mysqli($servername, $username, $password, $database);
+
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT heading, tripDate, duration, summary FROM trips";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+    echo " " . $row["heading"]. 
+        "Date: " . $row["tripDate"]. 
+        "Duration: " . $row["duration"]. 
+        "Summary: " . $row["summary"];
+  }
+} else {
+  echo "0 results";
+}
+?> 
+
+</body>
+
+<p>
+     
+     <?php
     include "footer.php";
     ?>
     
+</p>
+    
     <span id="logout" position="top right"><a href="logout.php">Log out</a></span>
-
+    
+    
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <script src="js.js" type="text/javascript"></script>
 
-</body>
 </html>

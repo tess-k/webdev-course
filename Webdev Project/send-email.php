@@ -1,8 +1,6 @@
+   
 <?php
-    if(!isset($_SESSION)) 
-    { 
-        session_start(); 
-    } 
+    require "header.php";
 ?>
 
 <!DOCTYPE html>
@@ -42,6 +40,7 @@
               <p><a href="index.php">Home</a>
               <p><a href="booking.html">Book an Adventure</a></p>
               <p><a href="admin.php">Admin Login</a></p>
+              <p><a href="admin-add.php">Add An Adventure</a></p>
             
         </div> 
 
@@ -52,9 +51,9 @@
 
 <?php
     
-$emailType = $_POST["emailType"];
+    $emailType = $_POST["emailType"];
             
-    if($emailType == "lostPassword")
+    if($emailType = "lostPassword")
     { ?>
 
     Lost password
@@ -63,7 +62,7 @@ $emailType = $_POST["emailType"];
     }
     
     
-    elseif ($emailType == "newAccount") 
+    elseif ($emailType = "newAccount") 
     { ?>
         
     New account

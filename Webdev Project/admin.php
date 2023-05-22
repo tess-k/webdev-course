@@ -39,6 +39,7 @@
               <p><a href="index.php">Home</a>
               <p><a href="booking.html">Book an Adventure</a></p>
               <p><a href="admin.php">Admin Login</a></p>
+              <p><a href="admin-add.php">Add An Adventure</a></p>
             
         </div> 
 
@@ -92,6 +93,7 @@
     
 </p>
     
+    <span id="logout" position="top right"><a href="logout.php">Log out</a></span>
     
     
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>

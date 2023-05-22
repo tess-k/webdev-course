@@ -39,6 +39,7 @@
               <p><a href="index.php">Home</a>
               <p><a href="booking.html">Book an Adventure</a></p>
               <p><a href="admin.php">Admin Login</a></p>
+              <p><a href="admin-add.php">Add An Adventure</a></p>
             
         </div> 
 
@@ -47,6 +48,16 @@
 
     <?php
 
+    $_SESSION = [];
+    $ses_params = session_get_cookie_params();
+
+    $options = array(
+    'lifetime' => time()-60,
+    'path'     => $ses_params['path'],
+    'domain'   => $ses_params['domain'],
+    'secure'   => $ses_params['secure'],
+    'httponly' => $ses_params['httponly'],
+    'samesite' => $ses_params['samesite']);
     session_destroy();
     
     ?>

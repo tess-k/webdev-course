@@ -2,6 +2,7 @@
     require "header.php";
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,31 +47,71 @@
 
     </nav>
 
-<?php 
-    $emailType = ($_POST["lostPassword"]);
 
-{ ?>
- <div class="container">
-  <form method="post" action="send-email.php">
+<body>
+    
+    <?php
+    
+$servername = "localhost";
+$username = "id20614282_localhost";
+$password = "#Password1";
+$database = "id20614282_webdevdb";
 
- 
-    <input type="radio" id="lostPassword" value="emailType">
-    <label for="lostPassword">I Lost My Password</label>
+$conn = new mysqli($servername, $username, $password, $database);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+        
+    ?>
+    
+    <div class="container">
+  <form method="post" action="admin-confirm.php">
+
+    <label for="title">Heading</label>
+    <input type="text" id="heading" name="heading" placeholder="Trip Name/Location">
+      
+    <label for="fname">Trip Date</label>
+    <input type="text" id="tdate" name="tdate" placeholder="dd/mm/yyyy">
+    
+        <label for="lname">Duration</label>
+    <input type="text" id="tduration" name="tduration" placeholder="Length of Trip">
+
+    <label for="role">Summary</label>
+    <input type="text" id="tduration" name="summary" placeholder="Description of Trip">
 
     <input type="submit" value="Submit">
 
   </form>
-</div>
-
+        
 <?php
-};
+if(isset($_POST['heading']))
+{
+$conn = new mysqli($servername, $username, $password, $database);
+
+$heading = $_POST['heading'];
+$tdate = $_POST['tdate'];
+$tduration = $_POST['tduration'];
+$summary = $_POST['summary'];
+
+
+$sql = "INSERT INTO `tbl_trips` ('Id', 'heading', 'tripDate', 'duration', 'summary') VALUES ('0', '$heading', '$tdate', '$tduration', '$summary')";
+
+$rs = mysqli_query($con, $sql);
+
+	
+}
 ?>
-
-
-
- <?php
+  </div>
+    
+    
+<p>
+     
+     <?php
     include "footer.php";
     ?>
+    
+</p>
     
     <span id="logout" position="top right"><a href="logout.php">Log out</a></span>
     
@@ -78,8 +119,4 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <script src="js.js" type="text/javascript"></script>
 
-</body>
 </html>
-    
-    
-    
