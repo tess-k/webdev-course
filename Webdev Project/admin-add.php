@@ -85,8 +85,7 @@ if ($conn->connect_error) {
   </form>
         
 <?php
-if(isset($_POST['heading']))
-{
+
 $conn = new mysqli($servername, $username, $password, $database);
 
 $heading = $_POST['heading'];
@@ -94,13 +93,10 @@ $tdate = $_POST['tdate'];
 $tduration = $_POST['tduration'];
 $summary = $_POST['summary'];
 
-
 $sql = "INSERT INTO `tbl_trips` ('Id', 'heading', 'tripDate', 'duration', 'summary') VALUES ('0', '$heading', '$tdate', '$tduration', '$summary')";
 
 $rs = mysqli_query($con, $sql);
-
-	
-}
+	    
 ?>
   </div>
     
