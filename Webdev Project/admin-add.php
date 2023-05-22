@@ -50,21 +50,6 @@
 
 <body>
     
-    <?php
-    
-$servername = "localhost";
-$username = "id20614282_localhost";
-$password = "#Password1";
-$database = "id20614282_webdevdb";
-
-$conn = new mysqli($servername, $username, $password, $database);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-        
-    ?>
-    
     <div class="container">
   <form method="post" action="admin-confirm.php">
 
@@ -86,6 +71,18 @@ if ($conn->connect_error) {
         
 <?php
 
+$servername = "localhost";
+$username = "id20614282_localhost";
+$password = "#Password1";
+$database = "id20614282_webdevdb";
+
+$conn = new mysqli($servername, $username, $password, $database);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+if(isset($_POST['heading']))
+{
 $conn = new mysqli($servername, $username, $password, $database);
 
 $heading = $_POST['heading'];
@@ -93,10 +90,13 @@ $tdate = $_POST['tdate'];
 $tduration = $_POST['tduration'];
 $summary = $_POST['summary'];
 
-$sql = "INSERT INTO `tbl_trips` ('Id', 'heading', 'tripDate', 'duration', 'summary') VALUES ('0', '$heading', '$tdate', '$tduration', '$summary')";
+
+$sql = "INSERT INTO trips ('heading', 'tripDate', 'duration', 'summary') VALUES ('$heading', '$tdate', '$tduration', '$summary')";
 
 $rs = mysqli_query($con, $sql);
-	    
+
+	
+}
 ?>
   </div>
     
