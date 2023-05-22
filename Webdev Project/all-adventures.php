@@ -47,8 +47,6 @@
     </nav>
     
     
-<body>
-    
  <?php
 $servername = "localhost";
 $username = "id20614282_localhost";
@@ -65,12 +63,11 @@ $sql = "SELECT heading, tripDate, duration, summary FROM trips";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-  // output data of each row
   while($row = $result->fetch_assoc()) {
     echo " " . $row["heading"]. 
         "Date: " . $row["tripDate"]. 
         "Duration: " . $row["duration"]. 
-        "Summary: " . $row["summary"];
+        "Summary: " . $row["summary"]; 
   }
 } else {
   echo "0 results";
