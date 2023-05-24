@@ -91,7 +91,15 @@ $tduration = $_POST['tduration'];
 $summary = $_POST['summary'];
 
 
-$sql = "INSERT INTO trips ('heading', 'tripDate', 'duration', 'summary') VALUES ('$heading', '$tdate', '$tduration', '$summary')";
+$sql = "INSERT INTO trips (heading, tripDate, duration, summary) VALUES ('$heading', '$tdate', '$tduration', '$summary')";
+	
+try {
+  $sql = "INSERT INTO trips (heading, tripDate, duration, summary) VALUES ('$heading', '$tdate', '$tduration', '$summary')";
+  $rs = mysqli_query($con, $sql);
+} catch (Exception $e) {
+  echo "Error : " . $e->getMessage() . "<br/>";
+  die();
+}
 
 $rs = mysqli_query($con, $sql);
 
